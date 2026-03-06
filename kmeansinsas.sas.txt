@@ -1,0 +1,45 @@
+PROC IMPORT
+OUT = heart_csv
+datafile="C:\Users\a1shaban\Desktop\heart.csv"
+dbms = csv replace;
+getnames =yes;
+proc print data=heart_csv (OBS=10);
+	Title "First 10 Observations from the heart csv file";
+proc contents data=heart_csv;
+run;
+
+/* Mean */
+proc means data=heart_csv;
+run;
+
+/*Standardization */
+proc stdize method=std out=heart_csv_std;
+	var age trestbps chol thalach oldpeak thal;
+proc print data=heart_csv_std (Obs=10);
+Title "First 10 Observations after Standardization";
+run;
+
+
+/*K-means Clustering with k=5*/
+
+%macro doFASTCLUS;
+	%do k=2 %to 5;
+			title
+					'Clusters in Heart with' &k'-Means';
+			proc fastclus
+				data= heart_csv_std
+				out = clust_solution
+				maxiter= 100
+				maxclusters =&k
+				summary;
+			
+			proc sgplot;
+				scatter x=age y=chol / datalabel =cluster;
+			run;
+	%end;
+%mend;
+%doFASTCLUS
+
+proc print data=clust_solution (Obs=10);
+run;
+
