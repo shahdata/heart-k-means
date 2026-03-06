@@ -43,3 +43,4 @@ run;
 proc print data=clust_solution (Obs=10);
 run;
 
+
