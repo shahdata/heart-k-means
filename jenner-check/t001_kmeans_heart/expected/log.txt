@@ -1,0 +1,48 @@
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA heart_csv
+
+NOTE: Processing inline DATALINES (60 lines)
+
+NOTE: Read 60 rows from DATALINES.
+NOTE: Wrote heart_csv (60 rows, 14 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC PRINT data=heart_csv
+
+NOTE: PROC PRINT completed: 10 observations printed, 14 variables
+NOTE: PROC CONTENTS data=heart_csv
+
+NOTE: PROC CONTENTS completed: 60 observations, 14 variables
+NOTE: PROC MEANS
+NOTE: PROC MEANS statement used.
+NOTE: PROC STDIZE data=
+
+NOTE: PROC STDIZE: Wrote 60 rows to heart_csv_std
+NOTE: PROC PRINT data=heart_csv_std
+
+NOTE: PROC PRINT completed: 10 observations printed, 14 variables
+NOTE: Option TITLE changed to Clusters in Heart with 2-Means.
+NOTE: PROC FASTCLUS data=heart_csv_std maxclusters=2
+
+NOTE: Using Python/scikit-learn for k-means clustering
+NOTE: PROC FASTCLUS: 60 observations, 0 variables, 2 clusters using k-means
+NOTE: Option TITLE changed to Clusters in Heart with 3-Means.
+NOTE: PROC FASTCLUS data=heart_csv_std maxclusters=3
+
+NOTE: Using Python/scikit-learn for k-means clustering
+NOTE: PROC FASTCLUS: 60 observations, 0 variables, 3 clusters using k-means
+NOTE: Option TITLE changed to Clusters in Heart with 4-Means.
+NOTE: PROC FASTCLUS data=heart_csv_std maxclusters=4
+
+NOTE: Using Python/scikit-learn for k-means clustering
+NOTE: PROC FASTCLUS: 60 observations, 0 variables, 4 clusters using k-means
+NOTE: Option TITLE changed to Clusters in Heart with 5-Means.
+NOTE: PROC FASTCLUS data=heart_csv_std maxclusters=5
+
+NOTE: Using Python/scikit-learn for k-means clustering
+NOTE: PROC FASTCLUS: 60 observations, 0 variables, 5 clusters using k-means
+NOTE: PROC PRINT data=clust_solution
+
+NOTE: PROC PRINT completed: 10 observations printed, 16 variables
