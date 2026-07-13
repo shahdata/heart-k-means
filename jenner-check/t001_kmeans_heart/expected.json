@@ -1,0 +1,15 @@
+{
+  "_captured_at": "2026-07-13T09:15:04+00:00",
+  "_captured_run_id": "r_6a2ec59a4e6c4781a69c2e0b5fcfa316",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Read 60 rows from DATALINES.",
+    "NOTE: Wrote heart_csv (60 rows, 14 columns).",
+    "NOTE: PROC STDIZE: Wrote 60 rows to heart_csv_std",
+    "NOTE: PROC FASTCLUS: 60 observations, 0 variables, 5 clusters using k-means",
+    "NOTE: PROC PRINT completed: 10 observations printed, 16 variables"
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

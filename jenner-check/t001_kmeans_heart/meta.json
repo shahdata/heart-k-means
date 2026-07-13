@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_kmeans_heart",
+  "source_file": "kmeansinsas.sas",
+  "source_blob_sha": "276f6b597aa99b33ce999f9a293264f1076d36e1",
+  "source_commit": "d8f882932f0069501c7704fb25bc3e0c69151e7a",
+  "notes": "K-Means heart-disease clustering. PROC IMPORT of a local heart.csv swapped for an inline DATA step carrying 60 real rows from the repo's heart.csv; PROC MEANS, PROC STDIZE (same VAR list), and the %doFASTCLUS macro over PROC FASTCLUS (k=2..5) are unchanged. Dropped the in-macro PROC SGPLOT scatter (graphics not relevant to the compat snapshot)."
+}
